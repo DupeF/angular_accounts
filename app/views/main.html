@@ -26,3 +26,4 @@
     <td>{{record.amount}}</td>
   </tr>
 </table>
+<ul uib-pagination ng-model="paginator.currentPage" items-per-page="paginator.recordsPerPage" total-items="paginator.totalRecords" ng-change="retrieveRecords()"></ul>

@@ -37,7 +37,7 @@ describe('Controller: MainCtrl', function () {
   });
 
   it('should set $scope.records when $scope.retrieveRecords is called', function () {
-    scope.page = 5;
+    scope.paginator = {current: 5};
 
     spyOn(recordQuery, 'getPage').and.callFake(function(page){
       return {
@@ -57,7 +57,7 @@ describe('Controller: MainCtrl', function () {
     spyOn(scope, 'retrieveRecords');
 
     scope.refresh();
-    
+
     expect(scope.retrieveBalance).toHaveBeenCalled();
     expect(scope.retrieveRecords).toHaveBeenCalled();
   });

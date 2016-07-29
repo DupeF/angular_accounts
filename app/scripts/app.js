@@ -10,7 +10,8 @@
  */
 angular
   .module('accountsApp', [
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
