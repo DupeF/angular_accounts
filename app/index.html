@@ -33,7 +33,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">accounts</a>
+            <a class="navbar-brand" href="#/">Accounts</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -48,12 +48,6 @@
 
     <div class="container">
     <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p>Tous droits dans le mur</p>
-      </div>
     </div>
 
 
@@ -80,7 +74,8 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/services/balancequery.js"></script>
+        <script src="scripts/services/recordquery.js"></script>
         <!-- endbuild -->
 </body>
 </html>
