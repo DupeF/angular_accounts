@@ -36,20 +36,21 @@ describe('Controller: MainCtrl', function () {
     expect(scope.balance.total).toEqual(10);
   });
 
-  it('should set $scope.records when $scope.retrieveRecords is called', function () {
-    scope.paginator = {current: 5};
+  it('should set $scope.records ad $scope.paginator.totalRecords when $scope.retrieveRecords is called', function () {
+    scope.paginator = {currentPage: 5};
 
     spyOn(recordQuery, 'getPage').and.callFake(function(page){
       return {
         success: function(callback){
-          callback({records: ["a", page]});
+          callback({records: ['a', page], totalRecords: 10});
         }
       };
     });
 
     scope.retrieveRecords();
 
-    expect(scope.records).toEqual(["a", 5]);
+    expect(scope.records).toEqual(['a', 5]);
+    expect(scope.paginator.totalRecords).toEqual(10);
   });
 
   it('should call $scope.retrieveRecords and $scope.retrieveBalance when $scope.refresh is called', function() {

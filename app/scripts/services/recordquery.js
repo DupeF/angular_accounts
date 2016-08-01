@@ -16,16 +16,17 @@ angular.module('accountsApp')
             callback({
               records: [
                 {
-                  title: 'Patates',
+                  title: 'Patates - page' + page,
                   amount: -12,
                   date: '24/06/2016'
                 },
                 {
-                  title: 'Tomates',
+                  title: 'Tomates - page' + page,
                   amount: -18,
                   date: '12/07/2016'
                 }
-              ]
+              ],
+              totalRecords: 35
             });
           }
         };

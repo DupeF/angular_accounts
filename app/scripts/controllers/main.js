@@ -11,7 +11,7 @@ angular.module('accountsApp')
   .controller('MainCtrl', function ($scope, balanceQuery, recordQuery) {
     $scope.paginator = {
       currentPage: 1,
-      totalRecords: 2,
+      totalRecords: 0,
       recordsPerPage: 10
     };
 
@@ -31,8 +31,9 @@ angular.module('accountsApp')
     };
 
     $scope.retrieveRecords = function(){
-      recordQuery.getPage($scope.paginator.current).success(function(data){
+      recordQuery.getPage($scope.paginator.currentPage).success(function(data){
         $scope.records = data.records;
+        $scope.paginator.totalRecords = data.totalRecords;
       });
     };
 
